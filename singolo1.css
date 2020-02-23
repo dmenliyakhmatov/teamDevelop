@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 
@@ -18,7 +18,7 @@ a {
 text-decoration: none;
 }
 
-.container{
+.container {
   margin: 0 auto;
   padding: 0 auto;
 
@@ -37,11 +37,12 @@ text-decoration: none;
 
   min-height: 95px;
   width: 1024px;
+  
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
 }
 
-.logo a{
+.logo a {
   margin-left: 2px;
   margin-top: 3px;
 
@@ -53,11 +54,11 @@ text-decoration: none;
   letter-spacing: -0.6px;
 }
 
-.logo-red-text{
+.logo-red-text {
   color: #f06c64;
 }
 
-.site-navigation{
+.site-navigation {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -75,7 +76,7 @@ text-decoration: none;
   list-style: none;
 }
 
-.site-navigation a{
+.site-navigation a {
   color: white;
 }
 
@@ -94,7 +95,7 @@ text-decoration: none;
 
 /*slider*/
 
-.slider{
+.slider {
   height: 600px;
   box-sizing: border-box;
 
@@ -105,26 +106,25 @@ text-decoration: none;
 
 .slider-button-back,
 .slider-button-next {
-
   background-color: transparent;
   border: none;
 
   cursor: pointer;
 }
 
-.slider-button-back{
+.slider-button-back {
   position: absolute;
   margin-top: 281px;
   margin-left: 44px;
 }
 
-.slider-button-next{
+.slider-button-next {
   position: absolute;
   margin-top: 278px;
   margin-left: 966px;
 }
 
-.slider-button-next{
+.slider-button-next {
   transform: rotate(180deg);
 }
 
@@ -133,7 +133,7 @@ text-decoration: none;
   transform: scale(1.1);
 }
 
-.slider-content{
+.slider-content {
   position: absolute;
   margin-left: 110px;
   width: 100%;
@@ -151,7 +151,7 @@ text-decoration: none;
 
 /*services*/
 
-.our-services{
+.our-services {
   padding-left: 42px;
   padding-right: 41px;
   padding-top: 64px;
@@ -161,14 +161,14 @@ text-decoration: none;
   background-color: #f2f2f2;
 }
 
-.sevices-title{
+.sevices-title {
   font-size: 30px;
   font-weight: 900;
   color: #666d89;
   letter-spacing: -0.1px;
 }
 
-.services-description{
+.services-description {
   margin-top: 28px;
 
   font-size: 18px;
@@ -188,7 +188,7 @@ text-decoration: none;
   list-style: none;
 }
 
-.services-item{
+.services-item {
   margin-bottom: 32px;
 
   color: #767e9e ;
@@ -197,9 +197,10 @@ text-decoration: none;
 }
 
 
-.item-title{ 
+.item-title { 
   margin-left: 80px;
   font-size: 18px;
+
   font-weight: 900;
   color: #666d89;
 }
@@ -207,6 +208,7 @@ text-decoration: none;
 .item-content {
   margin-top: 7px;
   margin-left: 80px;
+
   font-size: 12px;
   line-height: 21px;
   font-weight: 400;
