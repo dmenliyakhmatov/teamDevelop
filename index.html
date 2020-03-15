@@ -12,8 +12,8 @@
     <div class="header-wrapper">
       <h1 class="logo"> Singolo<span class="logo-red-text">*</span> </h1>
       <nav class="main-navigation">
-        <ul class="site-navigation">
-          <li class="active-page"><a href="#">Home</a></li>
+        <ul class="site-navigation" id="menu">
+          <li ><a href="#" class="active-page">Home</a></li>
           <li>·</li>
           <li><a href="#">Services</a></li>
           <li>·</li>
@@ -30,17 +30,24 @@
   <main>
     <section class="slider">
       <div class="slider-wrapper">
-        <button class="slider-button-back" type="button">
-            <img src="assets/slider-button.png" alt="back button" class="button-image">
-          <div class="bg"></div>
-        </button>
-        <figure class="slider-content">
-          <img src="assets/iPhone_Vertical.png" alt="phone" class="iphone_vertical">
-          <img src="assets/iPhone_Horizontal.png" alt="phone" class="iphone_horizontal">
-        </figure>
-        <button class="slider-button-next" type="button">
-          <img src="assets/slider-button.png" alt="next button" class="button-image">
-        </button>
+        <button class="slider-button-back" type="button" onclick="changeSlides(-1,'back')">
+          <img src="assets/slider-button.png" alt="back button" class="button-image">
+        <div class="bg"></div>
+      </button>
+      <button class="slider-button-next" type="button" onclick="changeSlides(1, 'next')">
+        <img src="assets/slider-button.png" alt="next button" class="button-image">
+      </button>
+        <div class="slider-item">
+          <figure class="slider-content">
+            <div class="vertical-display display-off"></div>
+            <div class="horizontal-display display-off"></div>
+            <img src="assets/iPhone_Vertical.png" alt="phone" class="iphone_vertical">
+            <img src="assets/iPhone_Horizontal.png" alt="phone" class="iphone_horizontal">
+          </figure>
+        </div>
+        <div class="slider-item">
+          <img src="assets/slide2.png" alt="second slider">
+        </div>
       </div>
     </section>
     
@@ -101,14 +108,14 @@
         <div class="container">
           <h2>Portfolio</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <div class="portfolio-filters">
+          <div class="portfolio-filters" id="filter">
             <button class="button-filter selected">All</button>
             <button class="button-filter">Web Design</button>
             <button class="button-filter">Graphic Design</button>
             <button class="button-filter">Artwork</button>
           </div>
     
-          <div class="portfolio-content">
+          <div class="portfolio-content" id="portfolio-content">
             <img src="assets/portfolio/1.jpg" alt="Portfolio image 1" class="portfolio-image">
             <img src="assets/portfolio/2.jpg" alt="Portfolio image 2" class="portfolio-image">
             <img src="assets/portfolio/3.jpg" alt="Portfolio image 3" class="portfolio-image">
@@ -187,6 +194,7 @@
           </div>
         </div>
       </section>
+    </main>
     
       <footer  class="main-footer">
         <div class="container">
@@ -200,6 +208,7 @@
         </div>
       </footer>
       
-  </main>
+      <script src="./script.js"></script>
+
 </body>
 </html>

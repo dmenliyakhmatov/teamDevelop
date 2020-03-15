@@ -52,6 +52,7 @@ body {
 
 a {
 text-decoration: none;
+color: white;
 }
 
 p {
@@ -124,11 +125,11 @@ p {
   list-style: none;
 }
 
-.site-navigation a {
+/*.site-navigation a {
   color: white;
-}
+}*/
 
-.active-page a{
+.active-page {
   color: #f06c64;
 }
 
@@ -156,6 +157,7 @@ p {
   padding: 0 auto;
 
   width: 1024px;
+  overflow: hidden;
 }
 
 .slider-button-back,
@@ -168,12 +170,14 @@ p {
 
 .slider-button-back {
   position: absolute;
+  z-index: 1;
   margin-top: 281px;
   margin-left: 44px;
 }
 
 .slider-button-next {
   position: absolute;
+  z-index: 1;
   margin-top: 278px;
   margin-left: 966px;
 }
@@ -188,9 +192,9 @@ p {
 }
 
 .slider-content {
-  position: absolute;
+  display: inline-block;
+  /*position: absolute;*/
   margin-left: 110px;
-  width: 100%;
 }
 
 .iphone_vertical {
@@ -203,6 +207,106 @@ p {
   margin-bottom: 122px;
 }
 
+.slider-item:not(:first-child) {
+  display: none;
+}
+
+.vertical-display {
+  width: 188px;
+  height: 333px;
+  position: absolute;
+  margin-left: 18px;
+  margin-top: 118px;
+  z-index: 1;
+  background-color: #000000;
+}
+
+.horizontal-display {
+  width: 333px;
+  height: 188px;
+  position: absolute;
+  margin-left: 377px;
+  margin-top: 188px;
+  z-index: 1;
+  background-color: #000000;
+}
+
+.display-off {
+  display: none;
+}
+
+.horizontal
+
+.slide-next {
+  -webkit-animation-name: slide;
+  -webkit-animation-duration: 1s;
+  animation-name: slide;
+  animation-duration: 1s;
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px)
+  }
+  75% {
+      opacity: 1;
+      transform: translateX(100px)
+  }
+
+  100% {
+    transform: translateX(0px)
+  }
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px)
+  }
+  75% {
+      opacity: 1;
+      transform: translateX(100px)
+  }
+
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+.slide-back {
+  -webkit-animation-name: slide-back;
+  -webkit-animation-duration: 1s;
+  animation-name: slide-back;
+  animation-duration: 1s;
+}
+@-webkit-keyframes slide-back {
+  0% {
+    opacity: 0;
+    transform: translateX(300px)
+  }
+  75% {
+      opacity: 1;
+      transform: translateX(-100px)
+  }
+
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+@keyframes slide-back {
+  0% {
+    opacity: 0;
+    transform: translateX(300px)
+  }
+  75% {
+      opacity: 1;
+      transform: translateX(-100px)
+  }
+
+  100% {
+    transform: translateX(0px)
+  }
+}
 /*services*/
 
 .our-services {
