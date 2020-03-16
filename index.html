@@ -8,20 +8,20 @@
 </head>
 
 <body>
-  <header class="main-header">
+  <header class="main-header" id="home">
     <div class="header-wrapper">
       <h1 class="logo"> Singolo<span class="logo-red-text">*</span> </h1>
       <nav class="main-navigation">
-        <ul class="site-navigation">
-          <li class="active-page"><a href="#">Home</a></li>
+        <ul class="site-navigation" id="menu">
+          <li ><a href="#home" class="active-page">Home</a></li>
           <li>·</li>
-          <li><a href="#">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li>·</li>
-          <li><a href="#">Portfolio</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li>·</li>
-          <li><a href="#">About</a></li>
+          <li><a href="#about">About</a></li>
           <li>·</li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
      </div>
     </nav>
@@ -30,21 +30,30 @@
   <main>
     <section class="slider">
       <div class="slider-wrapper">
-        <button class="slider-button-back" type="button">
-            <img src="assets/slider-button.png" alt="back button" class="button-image">
-          <div class="bg"></div>
-        </button>
-        <figure class="slider-content">
-          <img src="assets/iPhone_Vertical.png" alt="phone" class="iphone_vertical">
-          <img src="assets/iPhone_Horizontal.png" alt="phone" class="iphone_horizontal">
-        </figure>
-        <button class="slider-button-next" type="button">
-          <img src="assets/slider-button.png" alt="next button" class="button-image">
-        </button>
+        <button class="slider-button-back" type="button" onclick="changeSlides(-1,'back')">
+          <img src="assets/slider-button.png" alt="back button" class="button-image">
+        <div class="bg"></div>
+      </button>
+      <button class="slider-button-next" type="button" onclick="changeSlides(1, 'next')">
+        <img src="assets/slider-button.png" alt="next button" class="button-image">
+      </button>
+        <div class="slider-item">
+          <figure class="slider-content">
+            <div class="vertical-display display-off"></div>
+            <div class="horizontal-display display-off"></div>
+            <div class="left-phone-button"></div>
+            <div class="right-phone-button"></div>
+            <img src="assets/iPhone_Vertical.png" alt="phone" class="iphone_vertical">
+            <img src="assets/iPhone_Horizontal.png" alt="phone" class="iphone_horizontal">
+          </figure>
+        </div>
+        <div class="slider-item">
+          <img src="assets/slide2.png" alt="second slider">
+        </div>
       </div>
     </section>
     
-    <section class="our-services">
+    <section class="our-services" id="services">
       <div class="container">
         <h2 class="sevices-title">Our Services</h2>
         <p class="services-description">
@@ -97,18 +106,18 @@
     </section>
 
     <body>
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
         <div class="container">
           <h2>Portfolio</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <div class="portfolio-filters">
+          <div class="portfolio-filters" id="filter">
             <button class="button-filter selected">All</button>
             <button class="button-filter">Web Design</button>
             <button class="button-filter">Graphic Design</button>
             <button class="button-filter">Artwork</button>
           </div>
     
-          <div class="portfolio-content">
+          <div class="portfolio-content" id="portfolio-content">
             <img src="assets/portfolio/1.jpg" alt="Portfolio image 1" class="portfolio-image">
             <img src="assets/portfolio/2.jpg" alt="Portfolio image 2" class="portfolio-image">
             <img src="assets/portfolio/3.jpg" alt="Portfolio image 3" class="portfolio-image">
@@ -125,7 +134,7 @@
         </div>
       </section>
     
-      <section class="about-us">
+      <section class="about-us" id="about">
         <div class="container">
           
           <h2>About Us</h2>
@@ -164,19 +173,23 @@
         </div>
       </section>
 
-      <section class="contacts">
+      <section class="contacts" id="contact">
+          <p class="modal-error hidden">Пустые поля либо неверный формат!</p>
+
         <div class="container">
           <h2>Get a Quote</h2>
           <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="contacts-wrapper">
               <form action="" method="POST" class="get-form">
-                <input type="text" name="name" placeholder="Name (Required)" required>
-                <input type="email" name="email" placeholder="Email (Required)" required>
-                <input type="text" name="subject" placeholder="Subject">
+                <input type="text" name="name" placeholder="Name (Required)" class="name" required>
+                <input type="email" name="email" placeholder="Email (Required)" class="email" required>
+                <input type="text" name="subject" placeholder="Subject" class="subject">
                 <textarea name="details" cols="15" rows="25" class="contact-textarea" placeholder="Describe your project in detail..." ></textarea>
-                <button type="submit" formmethod="POST">Submit</button>
+                <button type="submit" formmethod="POST" class="form-submit">Submit</button>
               </form>
-    
+              <div class="modal-error hidden">
+                <p>Пустые поля либо неверный формат!</p>
+              </div>
             <section class="contact-info">
               <h3>Contact Information</h3>
               <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viver &shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
@@ -187,6 +200,7 @@
           </div>
         </div>
       </section>
+    </main>
     
       <footer  class="main-footer">
         <div class="container">
@@ -200,6 +214,21 @@
         </div>
       </footer>
       
-  </main>
+      <section class="modal hidden">
+        <div class="modal-content">
+          <h3>The letter was sent</h3>
+          <p class="subject-text"></p>
+          <p class="description-text"></p>
+        </div>
+        <button type="button" class="ok-button">OK</button>
+        <button type="button" class="modal-close"></button>
+      </section>
+      <div class="overlay hidden"></div>
+
+      <section class="modal-error hidden">
+        <p>Пустые поля либо неверный формат!</p>
+      </section>
+      <script src="./script.js"></script>
+
 </body>
 </html>
