@@ -1,8 +1,12 @@
 const MENU = document.getElementById('menu');
 const PORTFOLIO = document.getElementById('portfolio-content');
 const FILTER = document.getElementById('filter');
-const VERT_PHONE = document.querySelector('.iphone_vertical');
-const HORIZONTAL_PHONE = document.querySelector('.iphone_horizontal')
+const VERT_PHONE = document.querySelector('.left-phone-button');
+const HORIZONTAL_PHONE = document.querySelector('.right-phone-button')
+const SUBMIT = document.querySelector('.form-submit');
+const CLOSE = document.querySelector ('.modal-close');
+const OK = document.querySelector('.ok-button');
+
 
 MENU.addEventListener('click', (event) => {
   MENU.querySelectorAll('a').forEach( (el) => el.classList.remove('active-page'));
@@ -31,7 +35,7 @@ screen.classList.toggle('display-off');
 function changeOrder() {
   let firstChild = PORTFOLIO.firstElementChild;
   PORTFOLIO.appendChild(firstChild);
-  PORTFOLIO.shift();
+
 }
 
 var slideIndex = 1;
@@ -63,4 +67,46 @@ function showSlides(n, typeAnimation) {
   }
 
   slides[slideIndex-1].style.display = "block";  
+}
+
+PORTFOLIO.addEventListener('click', (event) => {
+  if (event.target.tagName === 'IMG') {
+  PORTFOLIO.querySelectorAll('img').forEach(el => { el.classList.remove('selected-image')});
+  event.target.classList.add('selected-image');
+  }
+})
+
+SUBMIT.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('.name');
+  const email = document.querySelector('.email');
+  const subject = document.querySelector('.subject');
+  const description = document.querySelector('.contact-textarea');
+
+  if (name.validity.valid && email.validity.valid) {
+  document.querySelector('.subject-text').innerText = subject.value ? "Subject " + subject.value :"Whithout subject";
+  document.querySelector('.description-text').innerText = description.value ? "Description: " + description.value : "Whithout description";
+  document.querySelector('.modal').classList.remove('hidden');
+  document.querySelector('.overlay').classList.remove('hidden');
+  } else { 
+    document.querySelector('.modal-error').classList.remove('hidden');
+    name.classList.add('form-error');
+    email.classList.add('form-error');
+    setTimeout(() => {
+      document.querySelector('.modal-error').classList.add('hidden');
+      name.classList.remove('form-error');
+      email.classList.remove('form-error');
+    }, 2000)
+  }
+form.reset();
+})
+
+CLOSE.addEventListener('click', closeModal);
+
+OK.addEventListener('click', closeModal);
+
+function closeModal() {
+  document.querySelector('.modal').classList.add('hidden');
+  document.querySelector('.overlay').classList.add('hidden');
 }
