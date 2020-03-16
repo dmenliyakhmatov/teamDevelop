@@ -1018,6 +1018,11 @@ background-color: #2d303a;
   border: 2px solid #767e9e;
 }
 
+.ok-button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 10px black;
+}
+
 .overlay {
   position: fixed;
   top: 0;
