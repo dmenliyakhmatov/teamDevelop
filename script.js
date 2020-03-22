@@ -13,10 +13,10 @@ for (let block of BLOCKS) {
     event.preventDefault();
     
     const blockID = block.getAttribute('href').substring(1);
-    
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    const offSetBlock = document.getElementById(blockID).offsetTop;
+    window.scrollTo({
+      top: offSetBlock-79,
+      behavior: 'smooth'
     })
   })
 }
@@ -26,6 +26,24 @@ MENU.addEventListener('click', (event) => {
   event.target.classList.add('active-page');
 })
 
+document.addEventListener('scroll', event => {
+    let currentPosition = window.pageYOffset;
+    const menuItems = document.querySelectorAll('.block');
+    const lastElement = menuItems.length-1
+
+    for (let i=0; i < menuItems.length; i++) {
+      const idName = menuItems[i].getAttribute('id');
+      if ( i !== lastElement && menuItems[i].offsetTop <= currentPosition &&  
+          currentPosition < menuItems[i+1].offsetTop  ) {
+        MENU.querySelectorAll('a').forEach( (el) => el.classList.remove('active-page'));
+        MENU.querySelector(`[href*="#${idName}"]`).classList.add('active-page');
+      } 
+      if ( i === lastElement && currentPosition >= menuItems[lastElement].offsetTop) { 
+        MENU.querySelectorAll('a').forEach( (el) => el.classList.remove('active-page'));
+        MENU.querySelector(`[href*="#${idName}"]`).classList.add('active-page');
+      }
+    }
+})
 
 FILTER.addEventListener('click', (event) => {
   FILTER.querySelectorAll('button').forEach(el => el.classList.remove('selected'));
