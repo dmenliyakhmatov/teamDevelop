@@ -1,4 +1,5 @@
-const MENU = document.getElementById('menu');
+const MENU = document.getElementById('menu')
+const BLOCKS = document.querySelectorAll('a[href*="#"]');
 const PORTFOLIO = document.getElementById('portfolio-content');
 const FILTER = document.getElementById('filter');
 const VERT_PHONE = document.querySelector('.left-phone-button');
@@ -7,6 +8,18 @@ const SUBMIT = document.querySelector('.form-submit');
 const CLOSE = document.querySelector ('.modal-close');
 const OK = document.querySelector('.ok-button');
 
+for (let block of BLOCKS) {
+  block.addEventListener('click', event => {
+    event.preventDefault();
+    
+    const blockID = block.getAttribute('href').substring(1);
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
 
 MENU.addEventListener('click', (event) => {
   MENU.querySelectorAll('a').forEach( (el) => el.classList.remove('active-page'));
