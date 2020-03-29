@@ -24,9 +24,10 @@ for (let block of BLOCKS) {
       behavior: 'smooth'
     })
     if (document.documentElement.clientWidth < 768){
+      document.querySelector('.logo').classList.toggle('deactive_logo')
       BUGRER.classList.toggle('burger_active');
       document.querySelector('.main-navigation').classList.toggle('menu_active');
-      document.querySelector('.overlay').classList.toggle('hidden');
+      document.querySelector('.header_overlay').classList.toggle('hidden');
     }
   })
 }

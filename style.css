@@ -172,7 +172,7 @@ p {
 
 .slider {
   box-sizing: border-box;
-  padding-top: 79px;
+  padding-top: 95px;;
 
 }
 
@@ -191,6 +191,7 @@ p {
   padding: 0 auto;
   width: 1024px;
   overflow: hidden;
+  height: 594px;
 }
 
 .slider-button-back,
@@ -408,7 +409,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
   list-style: none;
 }
 
@@ -1093,9 +1094,14 @@ background-color: #2d303a;
 .slider-wrapper {
   margin: 0 auto;
   padding: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 0;
   width: 768px;
   overflow: hidden;
+  height: auto;
+}
+
+#red_slide {
+  margin-bottom: 42px;
 }
 
 .slider-button-back,
@@ -1448,6 +1454,7 @@ background-color: #2d303a;
   margin-bottom: 10px;
   width: 100%;
   overflow: hidden;
+  height: auto;
 }
 
 .slider-button-back,
