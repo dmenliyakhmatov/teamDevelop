@@ -9,26 +9,29 @@
 
 <body>
   <header class="main-header">
-    <div class="header-wrapper">
+    <div class="header-body">
+      <div class="header-wrapper">
       <h1 class="logo"> Singolo<span class="logo-red-text">*</span> </h1>
+      <div class="header_burger">
+        <span></span>
+      </div>
       <nav class="main-navigation">
+        <p class="mobile_logo">Singolo<span>*</span></p>
         <ul class="site-navigation" id="menu">
-          <li ><a href="#home" class="active-page">Home</a></li>
-          <li>·</li>
+          <li><a href="#home" class="active-page">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li>·</li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li>·</li>
           <li><a href="#about">About</a></li>
-          <li>·</li>
           <li><a href="#contact">Contact</a></li>
         </ul>
      </div>
     </nav>
+  </div>
+  <div class="header_overlay hidden"></div>
   </header>
 
   <main>
-    <section class="slider" id="home">
+    <section class="block slider red_background" id="home">
       <div class="slider-wrapper">
         <button class="slider-button-back" type="button" onclick="changeSlides(-1,'back')">
           <img src="assets/slider-button.png" alt="back button" class="button-image">
@@ -37,7 +40,7 @@
       <button class="slider-button-next" type="button" onclick="changeSlides(1, 'next')">
         <img src="assets/slider-button.png" alt="next button" class="button-image">
       </button>
-        <div class="slider-item">
+        <div class="slider-item" id="red_slide">
           <figure class="slider-content">
             <div class="vertical-display display-off"></div>
             <div class="horizontal-display display-off"></div>
@@ -47,13 +50,13 @@
             <img src="assets/iPhone_Horizontal.png" alt="phone" class="iphone_horizontal">
           </figure>
         </div>
-        <div class="slider-item">
-          <img src="assets/slide2.png" alt="second slider">
+        <div class="slider-item" id="blue_slide">
+          <img src="assets/slide2.png" alt="second slider" class="second_slider">
         </div>
       </div>
     </section>
     
-    <section class="our-services" id="services">
+    <section class="block our-services" id="services">
       <div class="container">
         <h2 class="sevices-title">Our Services</h2>
         <p class="services-description">
@@ -106,7 +109,7 @@
     </section>
 
     <body>
-      <section class="portfolio" id="portfolio">
+      <section class="block portfolio" id="portfolio">
         <div class="container">
           <h2>Portfolio</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -134,7 +137,7 @@
         </div>
       </section>
     
-      <section class="about-us" id="about">
+      <section class="block about-us" id="about">
         <div class="container">
           
           <h2>About Us</h2>
@@ -173,7 +176,7 @@
         </div>
       </section>
 
-      <section class="contacts" id="contact">
+      <section class="block contacts" id="contact">
           <p class="modal-error hidden">Пустые поля либо неверный формат!</p>
 
         <div class="container">
@@ -187,9 +190,6 @@
                 <textarea name="details" cols="15" rows="25" class="contact-textarea" placeholder="Describe your project in detail..." ></textarea>
                 <button type="submit" formmethod="POST" class="form-submit">Submit</button>
               </form>
-              <div class="modal-error hidden">
-                <p>Пустые поля либо неверный формат!</p>
-              </div>
             <section class="contact-info">
               <h3>Contact Information</h3>
               <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viver &shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
@@ -197,6 +197,9 @@
               <a href="tel:03528 331 86 35" class="phone">03528 331 86 35</a>
               <a href="info@singolo.com" class="contact-email">info@singolo.com</a>
             </section>
+            <div class="modal-error hidden">
+              <p>Пустые поля либо неверный формат!</p>
+            </div>
           </div>
         </div>
       </section>
