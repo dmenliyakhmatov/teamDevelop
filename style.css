@@ -306,7 +306,7 @@ p {
   display: none;
 }
 
-.slide-next {
+.slide-back {
   -webkit-animation-name: slide;
   -webkit-animation-duration: 1s;
   animation-name: slide;
@@ -341,7 +341,7 @@ p {
   }
 }
 
-.slide-back {
+.slide-next {
   -webkit-animation-name: slide-back;
   -webkit-animation-duration: 1s;
   animation-name: slide-back;
