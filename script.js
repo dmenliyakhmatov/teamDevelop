@@ -12,7 +12,7 @@ const MOBILE_HORIZ_PHONE = document.querySelector('.iphone_horizontal');
 const MOBILE_VERT_PHONE = document.querySelector('.iphone_vertical');
 
 
-//
+//scrolling
 for (let block of BLOCKS) {
   block.addEventListener('click', event => {
     event.preventDefault();
@@ -32,6 +32,7 @@ for (let block of BLOCKS) {
   })
 }
 
+//scrolling track
 document.addEventListener('scroll', event => {
     let currentPosition = window.pageYOffset;
     const menuItems = document.querySelectorAll('.block');
@@ -52,13 +53,9 @@ document.addEventListener('scroll', event => {
 
 })
 
-FILTER.addEventListener('click', (event) => {
-  FILTER.querySelectorAll('button').forEach(el => el.classList.remove('selected'));
-  event.target.classList.add('selected');
-  changeOrder();
-  
-})
 
+
+//display off
 if (document.documentElement.clientWidth >= 768){
   VERT_PHONE.addEventListener('click', el => {
     let screen = VERT_PHONE.parentElement.querySelector('.vertical-display');
@@ -82,6 +79,13 @@ if (document.documentElement.clientWidth >= 768){
     screen.classList.toggle('display-off');
   })
 }
+// portfolio reorder
+FILTER.addEventListener('click', (event) => {
+  FILTER.querySelectorAll('button').forEach(el => el.classList.remove('selected'));
+  event.target.classList.add('selected');
+  changeOrder();
+  
+})
 
 function changeOrder() {
   let firstChild = PORTFOLIO.firstElementChild;
@@ -89,6 +93,15 @@ function changeOrder() {
 
 }
 
+//portfolio select
+PORTFOLIO.addEventListener('click', (event) => {
+  if (event.target.tagName === 'IMG') {
+  PORTFOLIO.querySelectorAll('img').forEach(el => { el.classList.remove('selected-image')});
+  event.target.classList.add('selected-image');
+  }
+})
+
+//slider
 var slideIndex = 1;
 showSlides(slideIndex, 'next');
 
@@ -127,13 +140,8 @@ function showSlides(n, typeAnimation) {
   }
 }
 
-PORTFOLIO.addEventListener('click', (event) => {
-  if (event.target.tagName === 'IMG') {
-  PORTFOLIO.querySelectorAll('img').forEach(el => { el.classList.remove('selected-image')});
-  event.target.classList.add('selected-image');
-  }
-})
 
+//submit form
 SUBMIT.addEventListener('click', (event) => {
   event.preventDefault();
 
@@ -159,6 +167,7 @@ SUBMIT.addEventListener('click', (event) => {
   }
 })
 
+//modal block
 CLOSE.addEventListener('click', closeModal);
 
 OK.addEventListener('click', closeModal);
@@ -169,6 +178,8 @@ function closeModal() {
   document.querySelectorAll('input, textarea').forEach(el=>el.value = '');
 }
 
+
+//menu for mobile
 BUGRER.addEventListener('click', event => {
   document.querySelector('.logo').classList.toggle('deactive_logo')
   BUGRER.classList.toggle('burger_active');
