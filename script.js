@@ -201,9 +201,9 @@ function closeModal() {
 }
 
 //menu for mobile
-// BUGRER.addEventListener('click', event => {
-//   document.querySelector('.logo').classList.toggle('deactive_logo')
-//   BUGRER.classList.toggle('burger_active');
-//   document.querySelector('.main-navigation').classList.toggle('menu_active');
-//   document.querySelector('.header_overlay').classList.toggle('hidden');
-// })
+BUGRER.addEventListener('click', event => {
+  document.querySelector('.logo').classList.toggle('deactive_logo')
+  BUGRER.classList.toggle('burger_active');
+  document.querySelector('.main-navigation').classList.toggle('menu_active');
+  document.querySelector('.header_overlay').classList.toggle('hidden');
+})
